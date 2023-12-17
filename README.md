@@ -8,7 +8,7 @@ To run this code, you'll need BeautifulSoup, Git and requests installed on your 
 From your command line: 
 # clone this repository or download the file
 https://github.com/ChaileGr/ChaileGr
-https://codeload.github.com/ChaileGr/ChaileGr/zip/refs/heads/main
+https://github.com/ChaileGr/Final_Project.py.git
 
 
 To install BeautifulSoup, copy and paste:
