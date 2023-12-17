@@ -6,13 +6,13 @@ def web_scrape():
     url = input("Enter the URL Here: ")
 
     try:
-        # Send a request to retrieve website information
+        # Send a request to retrieve accurate url
         response = requests.get(url)
 
         # Check if the request was successful (status code 200)
         if response.status_code == 200:
             
-            soup = BeautifulSoup(response.text, 'html.parser')#Go through website and pick through user requests
+            soup = BeautifulSoup(response.text, 'html.parser')#Goes through website and picks through user requests
 
             # Extract and print the title of the webpage
             title = soup.title.text.strip()
@@ -20,11 +20,10 @@ def web_scrape():
 
             # Find all links within the webpage then for the identified hyperlinks that meet the criteria print all
             links = soup.find_all('a', href=True)
-
             print("Links:")
             for link in links:
                 print(link['href'])
-
+            #finds all paragraphs within the webiste and scrapes every text under this category.
             paragraphs = soup.find_all('p')
             print("Paragraphs:")
             for paragraph in paragraphs: 
@@ -32,7 +31,8 @@ def web_scrape():
             
         else:
             print("Failed to retrieve the webpage. Status code:", response.status_code)#prints out an error code that communicates why the site couldn't be scraped 
-
+            
+#Error outside of stauts codes are represented as exceptions or "e" in this case
     except requests.RequestException as e:
         print("Error during the request:", e)
 
